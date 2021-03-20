@@ -41,6 +41,10 @@ main {
   flex-grow: 1;
 }
 
+p {
+  line-height: 1.6;
+}
+
 .img {
   margin-bottom: 4rem;
 }
