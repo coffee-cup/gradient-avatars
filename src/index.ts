@@ -1,5 +1,6 @@
 import bodyParser from "body-parser";
 import express from "express";
+import { generateSVG } from "./gradients";
 
 const app = express();
 const port = process.env.PORT || 3333;
@@ -8,8 +9,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 app.use(bodyParser.text({ type: "text/html" }));
 
-app.get("/", async (req, res) => {
-  res.json({ Hello: "World" });
+app.use(express.static("public"));
+
+app.get("/:value", async (req, res) => {
+  const value = req.params.value;
+
+  if (value == null || typeof value !== "string") {
+    return res.status(400).json({ error: "Invalid request" });
+  }
+
+  const svg = generateSVG(value);
+
+  res.setHeader("Content-Type", "image/svg+xml");
+  res.send(svg);
 });
 
 app.listen(port, () => {
