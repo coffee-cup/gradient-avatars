@@ -22,6 +22,11 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/color-hash@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/color-hash/-/color-hash-1.0.0.tgz#2671e71d46ce07248ca149ca058bdc01c2dbb975"
+  integrity sha512-Vj9gPc43pJeILnI0Yh0ds4+1toNUmvVqKxg/5sY8ESZafKo24TY5eCKXwXPym1xcgEMb2Qxy3dRwaYOro4U5Tg==
+
 "@types/connect@*":
   version "3.4.34"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.34.tgz#170a40223a6d666006d93ca128af2beb1d9b1901"
@@ -260,6 +265,11 @@ color-convert@^2.0.1:
   integrity sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==
   dependencies:
     color-name "~1.1.4"
+
+color-hash@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/color-hash/-/color-hash-1.0.3.tgz#c0e7952f06d022e548e65da239512bd67d3809ee"
+  integrity sha1-wOeVLwbQIuVI5l2iOVEr1n04Ce4=
 
 color-name@~1.1.4:
   version "1.1.4"

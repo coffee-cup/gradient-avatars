@@ -1,7 +1,8 @@
-import crypto from "crypto";
+import ColorHash from "color-hash";
 
-export const stringToColour = (s: string): string =>
-  "#" + crypto.createHash("md5").update(s).digest("hex").substr(0, 6);
+const colorHash = new ColorHash({ saturation: 1.0 });
+
+export const stringToColour = (s: string): string => colorHash.hex(s);
 
 export const generateColours = (s: string): [string, string] => {
   const s1 = s.substring(0, s.length / 2);
