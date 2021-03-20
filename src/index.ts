@@ -18,7 +18,12 @@ app.get("/:value", async (req, res) => {
     return res.status(400).json({ error: "Invalid request" });
   }
 
-  const svg = generateSVG(value);
+  let svg = "";
+  try {
+    svg = generateSVG(value);
+  } catch (e) {
+    svg = generateSVG("asdf");
+  }
 
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(svg);
